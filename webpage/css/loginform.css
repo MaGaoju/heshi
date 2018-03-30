@@ -130,6 +130,18 @@ div#userloginform, div#signupform{
     margin-top:0px;
 }
 
+select.loginusertype{
+    width:200px;
+    padding:5px 8px;
+    margin:12px auto;
+    background-color:#EFFCEF;
+    border-style:solid;
+    border-width:1px;
+    border-color:#363;
+    display:block;  
+
+}
+
 input.inputtextforloginform{
     width:200px;
     padding:5px 8px;

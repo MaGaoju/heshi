@@ -12,7 +12,8 @@
 		<link rel="icon" href="pic/favicon.ico">
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="./css/profile.css">
 		<link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/pageshare.css">
     <script type="text/javascript" src="./js/common.js"></script>
@@ -74,43 +75,179 @@
                   </nav>
               </div> 
             </div>
-              <!-- nav end -->
-		
-		<div id="infobloc-lili" class="infobloc">
-		<div id="quote">
-		<p class="quotecontent">&ldquo;最适合你的才是最好的&rdquo;</p>
-		<p class="quotefrom">- 何丽丽</p>
-		</div>
+            <div id="messagenotification" class="messagenotibox">
+                <p id="message-noti-txt"><span class="glyphicon glyphicon-comment"></span>&nbsp; 您收到 <strong>0</strong> 条新消息 <a id="messageopenlinker" href="http://beyoudiamond.com/message.php">查看 »</a></p>
+              </div>
+              <div class="contentmainwrapper">
+              <h2>
+                <span id="thetxtofpagetitle">我的合适账户</span>	
+              </h2>
+              <h3>高级用户
+                <span class="accountlevelstars">
+                  <span class="glyphicon glyphicon-star"></span>
+                </span>
+              </h3>
+            
+              <p class="inpage-navi-box">
+              <button class="inpage-navi" id="inpage-navi_generalinfo" onclick="goToSection(&#39;generalinfo&#39;)">基本信息</button>
+              <button class="inpage-navi" id="inpage-navi_mypoints" onclick="goToSection(&#39;mypoints&#39;)">我的积分</button>
+              <button class="inpage-navi" id="inpage-navi_myclients" onclick="goToSection(&#39;myclients&#39;)">我的客人</button>
+              <button class="inpage-navi" id="inpage-navi_coupon" onclick="goToSection(&#39;coupon&#39;)">打折／代金券</button>
+              <button class="inpage-navi active" id="inpage-navi_personalinfo" onclick="goToSection(&#39;personalinfo&#39;)">个人信息</button>
+              </p>
+            
+              <!-- offerticket box -->
+              <div class="generalinfo discountbox" id="generalinfo" style="display: none;">
+              <h3 class="g-info-title">您好，MGJ<form method="post" action="http://beyoudiamond.com/myaccount.php" id="logoutform">
+              <input type="hidden" name="logout" value="confirmed">
+              <input type="submit" value="登出账号" name="logoutbtn" id="logoutbtn">
+              </form>
+              </h3>
+              <h4 class="g-info-content">价格折扣: <span style="font-weight:bold; font-size:16px;">0.98</span></h4>
+            
+              <h4>我的积分：(一年内) 总购买金额: <strong>0</strong>欧元<button id="mypointdetailbtn" href="/myaccount.php#section-mypoints" onclick="goToSection(&#39;mypoints&#39;)">详情 »</button></h4>
+            
+              <p class="ticket-question" onclick="showRegulation()">折扣、积分规则 »</p>
+              <div class="ticket-answer">
+              <p>您的购买折扣是根据您和您推荐的用户一年内购买合适商品的总金额折算出来的:</p>
+                从一年前到现在为止
+              <ul>
+              <li>消费满5000欧元: 95折</li>
+              <li>消费满50000欧元: 93折</li>
+              <li>消费满100000欧元: 90折</li>
+              </ul>
+              </div>
+            
+            
+            
+              <div id="myreferenceticketbox">
+              <p id="titleformyreference" onclick="openRecoContent();">
+              轻松推荐 赚取酬金 »
+              </p>
+            
+              <div id="reco-contentbox">
+              推荐您的朋友成为合适会员，惊喜等您拿！如果您推荐的会员购买了任何商品，合适总部都会把该商品的价格的1%作为酬金奖励给您。<br>且他们的积分都算作您的积分。
+            
+              <div class="share-ticket-tools">
+              <span class="glyphicon glyphicon-hand-right"></span> 推荐方法:
+              <p id="toolexpl">点击打开下面链接中的页面，然后把该页面分享到微信朋友圈(或发送给朋友)。也可以拷贝这个链接，邮件等方式发给朋友。就这么简单！</p>
+              <p><a target="_blank" href="http://beyoudiamond.com/login.php?ref=106953Xh0MGI7nzT" id="recommenduserurl">http://beyoudiamond.com/login.php?ref=106953Xh0MGI7nzT</a></p>
+              </div>
+              </div><!-- end roco-contentbox -->
+            
+              </div>
+              </div><!-- end generalinfo -->
+            
+              <!-- history -->
+              <div class="history" id="mypoints" style="display: none;">
+              <!--
+              <h3>购买历史纪录</h3>
+              -->
+              <div class="historybox history-diamond">
+              <h4>钻石购买历史纪录</h4>
+              <ul>
+                <li class="no-order">尚未购买任何可积分的钻石</li>
+                </ul>
+              </div>
+            
+              <div class="historybox history-diamond">
+              <h4>首饰购买历史记录</h4>
+              <ul>
+                <li class="no-order">尚未购买任何首饰</li>
+                </ul>
+              </div>
+            
+              <div class="historysummary">
+              <p>您一年内总的购买金额为 <span class="thepricevalue">0</span>欧元</p>
+              <p>您的全部购买金额为 <span class="thepricevalue">0</span>欧元</p>
+            
+              <!--
+              <p>您尚未收到的返点金额为 <span class="thepricevalue"></span>欧元, 合 元人民币, 美元</p>
+              -->
+              </div>
+            
+              </div>
+            
+            
+              <!-- history recommended users-->
+              <div class="history-recommenedusers" id="myclients" style="display: none;">
+              <h3>历史纪录: 我推荐的用户</h3>
+              <div class="theuserslist">
+              <p>您尚未推荐任何用户</p>
+              </div>
+              </div>
+            
+            
+            
+            
+            
+              <!-- discount ticket -->
+            
+              <!-- heshibi -->
+              <div class="generalinfo heshibi-box" style="display: none;">
+              <h3>我的合适币（代金劵）</h3>
+              <div class="my-heshibi">
+              <div class="my-heshibi-amount-box">
+              余额: 0€
+              </div>
+              </div>
+              <p>合适币余额: 0欧元 (0元人民币, 0美元)</p>
+            
+              <p class="heshibitranferbtnbox">您的合适币可以代替现金购买任何合适商品，也可以<a target="_blank" href="http://beyoudiamond.com/press/2016/03/29/%E5%A6%82%E4%BD%95%E5%B0%86%E5%90%88%E9%80%82%E5%B8%81%E5%85%91%E6%8D%A2%E6%88%90%E7%8E%B0%E9%87%91%EF%BC%9F/">兑换成现金</a>。</p>
+            
+              </div>
+            
+              <!-- account info -->
+              <div class="accountinfobox" id="personalinfo" style="display: block;">
+              <h3>个人信息</h3>
+              <p id="updatewarning"><span class="glyphicon glyphicon-exclamation-sign"></span> 为了交易顺利，请更新这里的信息 </p>
+              <div>
+              <form action="http://beyoudiamond.com/myaccount.php" method="post">
+              <p><label>姓名</label><input type="text" name="name_new" id="account_name" value=""></p>
+              <p><label>电话</label><input type="text" name="tel_new" id="account_tel" value="-"></p>
+              <p><label>微信ID</label><input type="text" name="wechatid_new" id="account_wechatid" value="-"></p>
+              <p><label>地址</label><input type="text" name="address_new" id="account_address" value=""></p>
+              <p><label>邮箱</label><input type="text" name="email" value=" "></p>
+              <p><label>密码</label><input type="text" name="website_password" value=""></p>
+            
+              <p><input type="submit" id="changeinfosavebtn" value="保存修改"></p>
+              </form>
+              <!--
+              <p><a href="changepassword.php">修改登录密码</a></p>
+              -->
+              </div>
+              </div>
+            
+            
+              <div class="logoutbtnbox">
+            
+              </div>
+            
+              </div>
 
-		<div class="leftblock">
-		<img src="/_images/constant/lili-icon.jpg" alt="合适钻石创始人" />
-
-		<p class="diamondcenterwords">
-		合适钻石创始人 何丽丽
-		</p>
-		</div>
-		<div class="rightblock">
-		<h2>品牌故事</h2>
-
-		<p>合适钻石由<strong>何丽丽</strong>于2013年创建。</p>
-		<p>何丽丽于1999年随父母移民到比利时。身处钻石之都，她看到亲朋好友常常不远万里来此购买钻石，那时就被这种光芒闪耀的宝石深深吸引。大学毕业后，她毅然选择了创建自己的钻石珠宝品牌的路。由于家人都从事完全不同的行业，何丽丽只能凭着自己的勤奋何执着，在摸爬滚打中走出自己的路来。由于在两种不同文化环境中的成长经历，使得她对中西方商业理念、习惯都有深刻的了解，在与当地人的生意交往中，人们会很自然的把她当作本地人来看待。这对合适钻石的货源的价格、品质都是一种绝对的优势。</p>
-		<p>经过多次的被骗和吃亏的经历，何丽丽深知对于不懂钻石的买家被骗后的懊悔。那时她立志创建一个良心品牌，让每一位买家都有机会买到价格最真实的钻石。</p>
-		<p>为了了解钻石和这个行业，何丽丽专门在一家钻石交易里的资深钻石公司实习并工作几年，并在这期间潜心钻研珠宝鉴定知识，并获得了IGI认证的珠宝鉴定师资格。2013年，在多位资深前辈的推荐和担保下，何丽丽成为了安特卫普四大钻石交易所里面的 <a target="_blank" href="http://diamantkring.org/">DIAMOND KRING</a> 的会员。这里是全世界钻石交易源头的源头，也让何丽丽掌握到第一手的钻石资源。</p>
-
-		<p>品牌创建初期，何丽丽意识到，光有漂亮高贵的钻石，并不能完全体现出钻石的价值和意义。还需要能工巧匠，为每一颗钻石搭配最恰当的款式。为此，合适钻石投入了极大的努力，寻找能工巧匠，创造出符合合适品牌理念的款式，从设计、做工、材料等每一个方面都反复考究。款式所传达的理念一直是合适品牌最注重的一个方面之一。</p>
-
-		<p>秉着“良心品牌”的理念，合适钻石创建后每一年都取得了可喜的成绩，并吸引了很多人才的加盟。</p>
-
-		<p>由于钻石这个行业有着相对来说很传统的销售模式，这种模式下销售钻石的成本很高。合适钻石团队一直致力于发展一种模式，把销售的成本降到最低，让买家能够真正最大限度的享有钻石本身的价值，而不是众多销售环节中产生的不必要的费用。通过网络销售钻石，对合适来说也是一种为买家节省成本的方式。我们相信，用诚心和我们的努力，一定会打造出让消费者满意的品牌。</p>
-
-		</div>
-		<br class="clear" />
 
 
-    <!-- FOOTER -->
 
 
-	<div id="loadingcover">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- FOOTER -->
+
+
+<div id="loadingcover">
     <span id="loadingindicontainer">
     <img id="loadingindiicon" src="./pic/loading-icon.gif">
     <span id="loadingtxt">载入中...</span>

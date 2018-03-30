@@ -13,11 +13,11 @@
 			<!-- Bootstrap core CSS -->
 			<link rel="stylesheet" href="./css/bootstrap.css"/>
 			<link rel="stylesheet" href="./css/bootstrap-theme.css"/>
-
-			<!-- Color size defination CSS -->
+			<!-- defination CSS -->
 			<link rel="stylesheet" href="./css/main.css"/>
 			<link rel="stylesheet" href="./css/pageshare.css"/>
 			<link rel="stylesheet" href="./css/loginform.css"/>
+			<script type="text/javascript" src="./js/common.js"></script>
 			<script async="" src="//www.google-analytics.com/analytics.js"></script>
 			<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -30,59 +30,57 @@
 		
 			</script>
 			<script src="//code.jquery.com/jquery.js"></script>
-			<script src="js/bootstrap.js"></script>
+			<script src="js/bootstrap.min.js"></script>
 			<script src="js/restrequest.js"></script>
 		</head>
 
-	<body>
-			<div class="navbar-wrapper">
-					<div class="container">
-								<a class="logobox" href=""><img id="site-logo" alt="比利时钻石" src="./pic/beyoudiamond-logo.png"></a>
-					
-								<div class="small-buttons-container">
-										<a id="shoppingcartbtn" href="">
-									<span class="glyphicon glyphicon-heart" aria-hidden="true"></span> 我的收藏 
-									<span id="num-shoppinglist-container" style="display:none;"><span id="num-shoppinglist">0</span></span></a>
-								<a id="myaccountbtn" href="login.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>登录 | 注册</a>
-							 </div>
-							
-								<div class="small-buttons-container-mobile">
-										<a id="shoppingcartbtn-mobile" href="shoppinglist.html">
-									<span class="glyphicon glyphicon-heart" aria-hidden="true"></span> 收藏 
-									<span id="num-shoppinglist-container-mobile" style="display:none;"><span id="num-shoppinglist-mobile">0</span></span>      </a>
-										<a id="myaccountbtn-mobile" href="login.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>登录 | 注册</a>
-										<br>
-								</div>
-								
-								<nav class="navbar navbar-default navbar-static-top">
-									<div class="container">
-										<div class="navbar-header">
-												<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-												<span class="sr-only">Toggle navigation</span>
-												<span class="icon-bar"></span>
-												<span class="icon-bar"></span>
-												<span class="icon-bar"></span>
-												</button>
-												<!-- <a class="navbar-brand" href="#"></a> -->
-										</div>
-												<div id="navbar" class="collapse navbar-collapse">
-														<ul class="nav navbar-nav">
-																<li><a href="home.html"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
-																<li><a href="diamond.html">钻石</a></li>
-																<li><a href="assdiamond.html">空托</a></li>
-																<li><a href="jewelry.html">首饰</a></li>
-																<li><a href="colordiamond.html">彩宝</a></li>
-																<li><a href="custjewelry.html">定制</a></li>
-																<li id="appobtnbox"><a href="">在线预约</a></li>
-																<li id="contactbtnbox"><a href="">联系我们</a></li>
-																<li id="brandstorybtnbox"><a href="">关于我们</a></li>       
-														</ul>
-												</div>
-									</div>
-								</nav>
-						</div> 
-					</div>
-				</div>
+    <body onload="checkCookie('host','SESSIONID')">
+        <div class="navbar-wrapper">
+            <div class="container">
+                  <a class="logobox" href=""><img id="site-logo" alt="比利时钻石" src="./pic/beyoudiamond-logo.png"></a>
+            
+                  <div id = "myprofileNav" class="small-buttons-container">
+                      <a id="shoppingcartbtn" href="">
+                    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>购物车 
+                    <span id="num-shoppinglist-container" style="display:none;"><span id="num-shoppinglist">0</span></span></a>
+                  <a id="myaccountbtn" href="login.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>登录 | 注册</a>
+                 </div>
+                
+                  <div id = "myprofileNav-mobile" class="small-buttons-container-mobile">
+                    <a id="shoppingcartbtn-mobile" href="shoppinglist.html">
+                    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>购物车 
+                    <span id="num-shoppinglist-container-mobile" style="display:none;"><span id="num-shoppinglist-mobile">0</span></span></a>
+                    <a id="myaccountbtn-mobile" href="login.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>登录 | 注册</a>
+                    <br>
+                  </div>             
+                  <nav class="navbar navbar-default navbar-static-top">
+                    <div class="container">
+                      <div class="navbar-header">
+                          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          </button>
+                          <!-- <a class="navbar-brand" href="#"></a> -->
+                      </div>
+                          <div id="navbar" class="collapse navbar-collapse">
+                              <ul class="nav navbar-nav">
+                                  <li><a href="home.html"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+                                  <li><a href="diamond.html">钻石</a></li>
+                                  <li><a href="assdiamond.html">空托</a></li>
+                                  <li><a href="jewelry.html">首饰</a></li>
+                                  <li><a href="colordiamond.html">彩宝</a></li>
+                                  <li><a href="custjewelry.html">定制</a></li>
+                                  <li id="appobtnbox"><a href="">在线预约</a></li>
+                                  <li id="contactbtnbox"><a href="">联系我们</a></li>
+                                  <li id="brandstorybtnbox"><a href="">关于我们</a></li>    
+                              </ul>
+                          </div>
+                    </div>
+                  </nav>
+              </div> 
+            </div>
 						<!-- nav end -->
 	<div id="messagenotification" class="messagenotibox">
 	<p id="message-noti-txt"><span class="glyphicon glyphicon-comment"></span>&nbsp; 您收到 <strong>0</strong> 条新消息 <a id="messageopenlinker" href="http://www.beyoudiamond.com/message.php">查看 »</a></p>
@@ -103,15 +101,20 @@
 	<img id="the_account_qrcode" src="./sign_qr.html">
 	</div>
 	<p class="expire_expl">两分钟内有效</p>	
-	<form action="http://www.beyoudiamond.com/qr_sign.php" method="post" id="sign-form">
+	<form action="" method="post" id="sign-form">
 	<input type="hidden" id="signID" value="34505">
 	<input type="hidden" name="wechatopenID" id="wechatopenID" value="">
 	</form>
 	<!-- userloginform -->
 		
-	<form>
-	<input name="loginkey" id="loginkey" type="text" class="inputtextforloginform" placeholder="电子邮箱|手机|QQ">
+	<form class="form-group">
+	<input name="loginkey" id="loginkey" type="text" class="inputtextforloginform" placeholder="电子邮箱|手机|用户名">
 	<input name="accountpassword" id="accountpassword" type="password" class="inputtextforloginform" placeholder="密码">
+	<select name="usertype" id="usertype" class="loginusertype">
+		<option value="customer">普通用户</option>
+		<option value="agent">代理</option>
+	</select>
+	<br class="clear">
 	<button type="button" id="loginformsubmitbtn" onclick="userlogin()">登陆</button>
 	</form>			
 	

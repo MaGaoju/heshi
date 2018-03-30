@@ -29,26 +29,31 @@
 		ga('create', 'UA-72076137-1', 'auto');
 		ga('send', 'pageview');
 
-		</script>
+    </script>
+    <script>
+        document.body.onload = function() {
+        getproductsList('daimonds');
+        };
+      </script>
     </head>
-    <body onload="getproductsList('jewelrys')">
+    <body onload="checkCookie('host','SESSIONID')">
         <div class="navbar-wrapper">
             <div class="container">
                   <a class="logobox" href=""><img id="site-logo" alt="比利时钻石" src="./pic/beyoudiamond-logo.png"></a>
             
-                  <div class="small-buttons-container">
+                  <div id = "myprofileNav" class="small-buttons-container">
                       <a id="shoppingcartbtn" href="">
-                    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> 我的收藏 
+                    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>购物车 
                     <span id="num-shoppinglist-container" style="display:none;"><span id="num-shoppinglist">0</span></span></a>
                   <a id="myaccountbtn" href="login.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>登录 | 注册</a>
                  </div>
                 
-                  <div class="small-buttons-container-mobile">
-                      <a id="shoppingcartbtn-mobile" href="shoppinglist.html">
-                    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> 收藏 
+                  <div id = "myprofileNav-mobile" class="small-buttons-container-mobile">
+                    <a id="shoppingcartbtn-mobile" href="shoppinglist.html">
+                    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>购物车 
                     <span id="num-shoppinglist-container-mobile" style="display:none;"><span id="num-shoppinglist-mobile">0</span></span></a>
-                      <a id="myaccountbtn-mobile" href="login.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>登录 | 注册</a>
-                      <br>
+                    <a id="myaccountbtn-mobile" href="login.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>登录 | 注册</a>
+                    <br>
                   </div>             
                   <nav class="navbar navbar-default navbar-static-top">
                     <div class="container">
@@ -89,7 +94,7 @@
                 
                 <div id="filter_box">
                 
-                <a id="fancycolorbtn" href="recommend-diamonds.php"><span class="glyphicon glyphicon-thumbs-up"></span> 合适推荐 &raquo;</a>
+                <a id="fancycolorbtn" href=""><span class="glyphicon glyphicon-thumbs-up"></span> 合适推荐 &raquo;</a>
                 
                 
                 <div id="weightandpricebox">
@@ -247,7 +252,7 @@
                   <select id="placechooser" onchange="filter_place()">
                   <option value="ALL">全部</option>
                   <option value="BELGIUM">比利时</option>
-                   <option value="CHINA">中国</option>
+                  <option value="CHINA">中国</option>
                   <option value="CZ">-深圳</option>
                   <option value="HK">-香港</option>
                   <option value="INDIA">印度</option>
@@ -257,12 +262,10 @@
                   
                   <div class="filter_line_dependent" id="filterline-stockref">
                   <span id="therefsearcherbox">  
-                  <input name="stockreftosearch" id="stockreftosearch" placeholder="钻石ID／证书编号" />
-                  <button id="stockrefbtn" onclick="searchbyRef()"><span class="glyphicon glyphicon-search"></span></button>
+                  <input name="searchref" id="searchref" placeholder="钻石ID／证书编号" />
+                  <button id="stockrefbtn" onclick="getproductbyID('diamond')"><span class="glyphicon glyphicon-search"></span></button>
                   </span>
-                  
-                  
-                  
+                
                   <div id="found-diamonds-num-box">为您找到<span id="found-diamonds-num-container"><span id="dia-num-bg"></span><span id="found-diamonds-num"></span></span>颗钻石</div>
                   </div>
                   <br class="clear" />
@@ -271,7 +274,6 @@
                 <br class="clear" />
                 
                 </div>
-                
                 
                 <div id="diamondsorting-box">
                 <label class="filter_title">排序</label>
@@ -285,14 +287,13 @@
                 </div>
                 
                 
-                
-                
-                <div id="diamondlist"></div>
-                
-                <div id="list-page-navi">第 <span id="diapagenavi"></span> 页</div>
-                
+                <div id="productsList">
+
+                    <div id="list-page-navi">第 <span id="diapagenavi"></span> 页</div>
+                  </div> 
+                  <br class="clear">         
                 </div>
-                
+              
                 
                 <div id="feedbackcover">
                 <div id="feedbackbox">
@@ -303,6 +304,100 @@
                 </div>
                 
             <!-- FOOTER -->
-            <iframe style="position:absolute;" src="static\foot.html"></iframe>
-    </body>
-    </html>
+            <footer>
+                <div class="container">
+                    <div id="bottom-infobloc" class="bottom-infobloc">
+                        <div id="bottom-infobloc-inner" class="bottom-infobloc-inner">
+                        <div id="why_heshi_box">
+                        <span class="whyquestion">为何选择合适钻石?</span>
+                        <span class="whyanswer"><span class="glyphicon glyphicon-check"></span> 性价比绝对优势</span>
+                        <span class="whyanswer"><span class="glyphicon glyphicon-check"></span> 安特卫普手工品质</span>
+                        <span class="whyanswer"><span class="glyphicon glyphicon-check"></span> 三年内可退可换</span>
+                        <span class="whyanswer"><span class="glyphicon glyphicon-check"></span> 全球保险包邮</span>
+                        </div>
+                        
+                        
+                        <div class="blocksmall1"><img class="bottomlogo" src="./pic/beyoudiamondlogo.png" alt="比利时钻石">
+                        <p style="font-size:10px; margin-top:8px;"><a href="">比利时钻石</a> <a href="">安特卫普钻石</a></p>
+                        </div>
+                        
+                        
+                        <div class="blocksmall2">
+                        <h4><a href="">客服中心</a></h4>
+                        <p><a href="">钻石知识</a></p>
+                        <p><a href="">购买指南</a></p>
+                        <p><a href="">常见问题</a></p>
+                        </div>
+                        
+                        <div class="blocksmall3">
+                        <h4>欢迎来访</h4>
+                        <p>
+                        Hovennierstraat 2, 1202室<br>
+                        2018 Antwerpen (比利时安特卫普)<br><br>
+                        </p>
+                        
+                        
+                        <h4>咨询热线</h4>
+                        <p>
+                        电话：+32 (0)485 939 508<br>
+                        </p>
+                        </div>
+                        
+                        <div class="blocksmall4">
+                        <!--
+                        
+                        -->
+                        <p class="qrcodebox"><img style="width:108px;" src="./pic/WechatIMG299.jpg" alt="安特卫普钻石"><br><span>客服微信</span></p>
+                        <p class="qrcodebox"><img style="width:108px;" src="./pic/qrcode.jpg" alt="安特卫普钻石"><br><span>微信公众号</span></p>
+                        </div>
+                        
+                        
+                        
+                        <br class="clear">
+                        </div>
+                        </div>
+                        
+                        
+                        <a class="livechatlinker" href="">
+                        <span class="messagebtntxt new-0">联系客服
+                        <!--
+                        <span id="newmessagenumindi-normal-btn" class="m-n-0">0</span>
+                        -->
+                        </span>  
+                        
+                        <span class="livechatlinkertxt-smallversion">
+                        <span class="glyphicon glyphicon-comment"></span>  <span class="livechatlinkertxt-smallversion-txt">在线咨询</span>
+                        </span>
+                        </a>
+                        <br class="clear"/>
+                </div>
+                <p class="pull-right"><a href="#">Back to top</a></p>
+                <p>© 2017 合适钻石 | BEYOU DIAMOND . <strong>比利时</strong> <strong>安特卫普</strong> All rights reserved <!-- &middot; --></p>
+              </footer>
+              
+              <!-- here place all the js files for a better performance -->
+              <script type="text/javascript" src="./js/jquery-1.11.3.min.js"></script>
+              <script type="text/javascript" src="./js/bootstrap.js"></script>
+              
+              <script type="text/javascript">
+              /*! * IE10 viewport hack for Surface/desktop Windows 8 bug * Copyright 2014-2015 Twitter, Inc. * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE) */
+              (function () {
+                'use strict';
+              
+                if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+                  var msViewportStyle = document.createElement('style')
+                  msViewportStyle.appendChild(
+                    document.createTextNode(
+                      '@-ms-viewport{width:auto!important}'
+                    )
+                  )
+                  document.querySelector('head').appendChild(msViewportStyle)
+                }
+              
+              })();
+              </script>
+              
+              <script type="text/javascript" src="./js/retrieve-newmessage-num.js"></script>
+              
+              </body>
+              </html>

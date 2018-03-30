@@ -130,16 +130,17 @@ li.crr_cate, .filter_complete li.crr_cate{
 div.jewelry-container-box{
 	position:relative;
 	text-align:center;
-	max-width:1000px;
+	width:auto;
 	margin:35px auto;
 }
 
 div.jewelrybox{
 	position:relative;
+	text-align:center;
 	display:block;
 	float:left;
 	width:230px;
-	height:398px;
+	height:400px;
 	padding:0;
 	margin:0 10px 30px 10px;
 	background-color:#eee;
@@ -149,7 +150,7 @@ div.jewelrybox{
 	border-color:#e3e3e3;
 }
 div.jewelrybox.mounting{
-	height:398px;
+	height:400px;
 }
 a.seedetailbtn-big{
 	position:relative;
