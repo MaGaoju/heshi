@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<title>BEYOU DIAMOND|合适钻石</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+		<meta content="安特卫普钻石,比利时钻石" name="keywords">
+		<meta content="合适钻石立足于比利时安特卫普钻石交易所，以最为实惠的价格和最优质的服务，为您提供最适合您的钻石和首饰。华人购买钻石的理想选择，无与伦比的性价比，值得信赖的品质" name="description">
+		<meta name="keywords"   content="BEYOU DIAMOND,比利时钻石, 安特卫普钻石, 合适钻石" />
+		<meta name="description"    content="BEYOU DIAMOND,比利时钻石, 安特卫普钻石, 合适钻石"/>
+		<meta name="author" content="Maggie Ma @2018">
+		<link rel="icon" href="./pic/favicon.ico">
+		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" href="./css/bootstrap-theme.css">
+		<link rel="stylesheet" href="./css/main.css">
+		<link rel="stylesheet" href="./css/pageshare.css">
+    <script async="" src="./js/analytics.js"></script>
+    <script type="text/javascript" src="./js/restrequest.js"></script>
+    <script type="text/javascript" src="./js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.js"></script>
+	<script type="text/javascript" src="./js/common.js"></script>
+    <script></script>
+    </head>
+    <body ng-app="myweb">
+    <a href="#">home</a>
+    <a href="#diamond">diamond page</a>
+    <a href="#jewelry">jewelry page</a>
+	<div ng-view></div>
+	<script>
+    var app = angular.module("myweb", ["ngRoute"]);
+    app.config(function($routeProvider) {
+        $routeProvider
+        .when("/", {
+            templateUrl : "home.html"
+        })
+        .when("/diamond", {
+            templateUrl : "diamond.html"
+        })
+        .when("/jewelry", {
+            templateUrl : "jewelry.html"
+        })
+        .when("/gem", {
+            templateUrl : "gems.html"
+        });
+    });
+    </script>    
+    <!-- FOOTER -->
+ 
+    <script type="text/javascript" src="./js/ie10-viewport-bug-workaround.js"></script>
+    <script></script>  
+    </body>
+    </html>

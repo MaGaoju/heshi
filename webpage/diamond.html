@@ -16,114 +16,45 @@
     <link rel="stylesheet" href="css/pageshare.css">
     <link rel="stylesheet" href="css/diamond.css">
     <script async="" src="./js/analytics.js"></script>
-    <script src="./js/jquery-1.11.3.min.js"></script>
     <script src="js/ie10-viewport-bug-workaround.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/restrequest.js"></script>
+    <script type="text/javascript" src="./js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
     <script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
 		ga('create', 'UA-72076137-1', 'auto');
 		ga('send', 'pageview');
-
     </script>
-    <script>
-        document.body.onload = function() {
-        getproductsList('daimonds');
-        };
-      </script>
     </head>
-    <body onload="checkCookie('host','SESSIONID')">
-        <div class="navbar-wrapper">
-            <div class="container">
-                  <a class="logobox" href=""><img id="site-logo" alt="比利时钻石" src="./pic/beyoudiamond-logo.png"></a>
-            
-                  <div id = "myprofileNav" class="small-buttons-container">
-                      <a id="shoppingcartbtn" href="">
-                    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>购物车 
-                    <span id="num-shoppinglist-container" style="display:none;"><span id="num-shoppinglist">0</span></span></a>
-                  <a id="myaccountbtn" href="login.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>登录 | 注册</a>
-                 </div>
-                
-                  <div id = "myprofileNav-mobile" class="small-buttons-container-mobile">
-                    <a id="shoppingcartbtn-mobile" href="shoppinglist.html">
-                    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>购物车 
-                    <span id="num-shoppinglist-container-mobile" style="display:none;"><span id="num-shoppinglist-mobile">0</span></span></a>
-                    <a id="myaccountbtn-mobile" href="login.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>登录 | 注册</a>
-                    <br>
-                  </div>             
-                  <nav class="navbar navbar-default navbar-static-top">
-                    <div class="container">
-                      <div class="navbar-header">
-                          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                          <span class="sr-only">Toggle navigation</span>
-                          <span class="icon-bar"></span>
-                          <span class="icon-bar"></span>
-                          <span class="icon-bar"></span>
-                          </button>
-                          <!-- <a class="navbar-brand" href="#"></a> -->
-                      </div>
-                          <div id="navbar" class="collapse navbar-collapse">
-                              <ul class="nav navbar-nav">
-                                  <li><a href="home.html"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
-                                  <li><a href="diamond.html">钻石</a></li>
-                                  <li><a href="assdiamond.html">空托</a></li>
-                                  <li><a href="jewelry.html">首饰</a></li>
-                                  <li><a href="colordiamond.html">彩宝</a></li>
-                                  <li><a href="custjewelry.html">定制</a></li>
-                                  <li id="appobtnbox"><a href="">在线预约</a></li>
-                                  <li id="contactbtnbox"><a href="">联系我们</a></li>
-                                  <li id="brandstorybtnbox"><a href="">关于我们</a></li>    
-                              </ul>
-                          </div>
-                    </div>
-                  </nav>
-              </div> 
-            </div>
-              <!-- nav end -->
-
-            <div class="contentmainwrapper">
+    <body onload="getproductsList('diamond')">
+        <div data-include="header"></div>
+              <div class="contentmainwrapper">
                 <h2 class="pagetitle">合适钻石</h2>
                 <h3 class="pagesubtitle">挑选适合您的钻石</h3>
                 <p class="subtitle-expl"><span class="glyphicon glyphicon-hand-right"></span> 将您选好的钻石放到预订单中，提交后可以预约到公司来看钻石。</p>
-                
-                
-                
                 <div id="filter_box">
-                
                 <a id="fancycolorbtn" href=""><span class="glyphicon glyphicon-thumbs-up"></span> 合适推荐 &raquo;</a>
-                
-                
                 <div id="weightandpricebox">
-                
                   <div class="filter_line_dependent" id="filter_line_weight">
                   <span class="filter_title">钻重</span>
                   <div id="slider-range-weight" style="width:288px;"></div>
                   <input type="number" id="weight_from" value="0.2" step=".1" /> - <input type="number" id="weight_to" value="20" step=".1" /> ct <button type="button" id="btn_weight" onclick="filter_weight()"><span class="glyphicon glyphicon-refresh"></span> 刷新</button>
-                  
                   <span id="tooltip-weight"></span>
-                  
                   </div>
-                  
-                  
                   <div class="filter_line_dependent" id="filter_line_price"> 
                   <span class="filter_title">价格</span> 
                   <div id="slider-range" style="width:288px;"></div>
                   <input type="number" id="price_from" value="100" /> - <input type="number" id="price_to" value="899999" /> € <button type="button" id="btn_price" onclick="filter_price()"><span class="glyphicon glyphicon-refresh"></span> 刷新</button>
-                  
                   <span class="vatchoicebox"><input type="checkbox" id="vat-choice" class="vat-choice" name="vat-choice" onchange="vatChoice()" /> 价格含税</span>
-                  
                   <span id="tooltip-price"></span>
-                  
                   </div>
-                  
                   <br class="clear" />
                 </div>
-                
-                
                 <div id="filterboxinner-left">
                   <!-- shape -->
                   <div class="filter_line" id="filterline-shape">
@@ -193,12 +124,9 @@
                   <li class="filter_certi" id="filter_certiIGI" title="IGI" onclick="filter_certi('IGI')">IGI
                   </li><li class="filter_certi" id="filter_certiHRD" title="HRD" onclick="filter_certi('HRD')">HRD
                   </li><li class="filter_certi" id="filter_certiGIA" title="GIA" onclick="filter_certi('GIA')">GIA</li>
-                  
                   </ul>
                   </div>
                 </div><!-- filterboxinner-left -->
-                
-                
                 <div id="filterboxinner-right">
                   <!-- cut -->
                   <div class="filter_line" id="filterline-cut">
@@ -208,7 +136,6 @@
                   </li><li class="filter_cut" id="filter_cutVG" title="VG" onclick="filter_cut('VG')">VG
                   </li><li class="filter_cut" id="filter_cutG" title="G" onclick="filter_cut('G')">G
                   </li><li class="filter_cut" id="filter_cutF" title="F" onclick="filter_cut('F')">F</li>
-                  
                   </ul>
                   </div>
                   <!-- polish -->
@@ -219,7 +146,6 @@
                   </li><li class="filter_polish" id="filter_polishVG" title="VG" onclick="filter_polish('VG')">VG
                   </li><li class="filter_polish" id="filter_polishG" title="G" onclick="filter_polish('G')">G
                   </li><li class="filter_polish" id="filter_polishF" title="F" onclick="filter_polish('F')">F</li>
-                  
                   </ul>
                   </div> 
                   <!-- symmetry -->
@@ -244,7 +170,6 @@
                   </ul>
                   </div>
                 </div><!-- filterboxinner-right -->
-                
                 <br class="clear" />
                 <div id="filterinner-diaid">
                   <p class="placechoosercontainer">
@@ -259,22 +184,17 @@
                   <option value="OTHER">其他地区</option>
                   </select>
                   </p>
-                  
                   <div class="filter_line_dependent" id="filterline-stockref">
                   <span id="therefsearcherbox">  
                   <input name="searchref" id="searchref" placeholder="钻石ID／证书编号" />
                   <button id="stockrefbtn" onclick="getproductbyID('diamond')"><span class="glyphicon glyphicon-search"></span></button>
                   </span>
-                
                   <div id="found-diamonds-num-box">为您找到<span id="found-diamonds-num-container"><span id="dia-num-bg"></span><span id="found-diamonds-num"></span></span>颗钻石</div>
                   </div>
                   <br class="clear" />
                 </div>
-                
                 <br class="clear" />
-                
                 </div>
-                
                 <div id="diamondsorting-box">
                 <label class="filter_title">排序</label>
                 <ul class="sortingbox">
@@ -285,16 +205,12 @@
                 </ul>
                 <br class="clear" />
                 </div>
-                
-                
                 <div id="productsList">
 
                     <div id="list-page-navi">第 <span id="diapagenavi"></span> 页</div>
                   </div> 
                   <br class="clear">         
                 </div>
-              
-                
                 <div id="feedbackcover">
                 <div id="feedbackbox">
                 <div class="bgimgcover" style="position:absolute; width:100%; height:100%; left:0; top:0; background-color:rgba(151,240,84,0.85); z-index:0;"></div>
@@ -302,102 +218,7 @@
                 <p style="z-index:2; position:relative;"><a id="ordersuccshoppinglistlinker" href="/shoppinglist-confirmed.php"><span class="glyphicon glyphicon-th-list"></span> 查看预定单</a> <button id="ordersuccmountinglinker" onclick="gotoMountingsfor()"><span></span> 配戒托</button> <button id="ordersuccsfdbcXbtn" onclick="xtheSfdb()">继续选购 &raquo;</button></p>
                 </div>
                 </div>
-                
-            <!-- FOOTER -->
-            <footer>
-                <div class="container">
-                    <div id="bottom-infobloc" class="bottom-infobloc">
-                        <div id="bottom-infobloc-inner" class="bottom-infobloc-inner">
-                        <div id="why_heshi_box">
-                        <span class="whyquestion">为何选择合适钻石?</span>
-                        <span class="whyanswer"><span class="glyphicon glyphicon-check"></span> 性价比绝对优势</span>
-                        <span class="whyanswer"><span class="glyphicon glyphicon-check"></span> 安特卫普手工品质</span>
-                        <span class="whyanswer"><span class="glyphicon glyphicon-check"></span> 三年内可退可换</span>
-                        <span class="whyanswer"><span class="glyphicon glyphicon-check"></span> 全球保险包邮</span>
-                        </div>
-                        
-                        
-                        <div class="blocksmall1"><img class="bottomlogo" src="./pic/beyoudiamondlogo.png" alt="比利时钻石">
-                        <p style="font-size:10px; margin-top:8px;"><a href="">比利时钻石</a> <a href="">安特卫普钻石</a></p>
-                        </div>
-                        
-                        
-                        <div class="blocksmall2">
-                        <h4><a href="">客服中心</a></h4>
-                        <p><a href="">钻石知识</a></p>
-                        <p><a href="">购买指南</a></p>
-                        <p><a href="">常见问题</a></p>
-                        </div>
-                        
-                        <div class="blocksmall3">
-                        <h4>欢迎来访</h4>
-                        <p>
-                        Hovennierstraat 2, 1202室<br>
-                        2018 Antwerpen (比利时安特卫普)<br><br>
-                        </p>
-                        
-                        
-                        <h4>咨询热线</h4>
-                        <p>
-                        电话：+32 (0)485 939 508<br>
-                        </p>
-                        </div>
-                        
-                        <div class="blocksmall4">
-                        <!--
-                        
-                        -->
-                        <p class="qrcodebox"><img style="width:108px;" src="./pic/WechatIMG299.jpg" alt="安特卫普钻石"><br><span>客服微信</span></p>
-                        <p class="qrcodebox"><img style="width:108px;" src="./pic/qrcode.jpg" alt="安特卫普钻石"><br><span>微信公众号</span></p>
-                        </div>
-                        
-                        
-                        
-                        <br class="clear">
-                        </div>
-                        </div>
-                        
-                        
-                        <a class="livechatlinker" href="">
-                        <span class="messagebtntxt new-0">联系客服
-                        <!--
-                        <span id="newmessagenumindi-normal-btn" class="m-n-0">0</span>
-                        -->
-                        </span>  
-                        
-                        <span class="livechatlinkertxt-smallversion">
-                        <span class="glyphicon glyphicon-comment"></span>  <span class="livechatlinkertxt-smallversion-txt">在线咨询</span>
-                        </span>
-                        </a>
-                        <br class="clear"/>
-                </div>
-                <p class="pull-right"><a href="#">Back to top</a></p>
-                <p>© 2017 合适钻石 | BEYOU DIAMOND . <strong>比利时</strong> <strong>安特卫普</strong> All rights reserved <!-- &middot; --></p>
-              </footer>
-              
-              <!-- here place all the js files for a better performance -->
-              <script type="text/javascript" src="./js/jquery-1.11.3.min.js"></script>
-              <script type="text/javascript" src="./js/bootstrap.js"></script>
-              
-              <script type="text/javascript">
-              /*! * IE10 viewport hack for Surface/desktop Windows 8 bug * Copyright 2014-2015 Twitter, Inc. * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE) */
-              (function () {
-                'use strict';
-              
-                if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-                  var msViewportStyle = document.createElement('style')
-                  msViewportStyle.appendChild(
-                    document.createTextNode(
-                      '@-ms-viewport{width:auto!important}'
-                    )
-                  )
-                  document.querySelector('head').appendChild(msViewportStyle)
-                }
-              
-              })();
-              </script>
-              
-              <script type="text/javascript" src="./js/retrieve-newmessage-num.js"></script>
-              
+              <div data-include="header"></div>
+              <script type="text/javascript" src="./js/ie10-viewport-bug-workaround.js"></script>
               </body>
-              </html>
+          </html>

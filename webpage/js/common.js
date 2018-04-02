@@ -1,3 +1,11 @@
+$(function(){
+          var includes = $('[data-include]');
+          jQuery.each(includes, function(){
+            var file = 'category/shared/' + $(this).data('include') + '.html';
+            $(this).load(file);
+          });
+ });
+
 function getCookie(key) {
 	var name = key + "=";
 	var ca = document.cookie.split(';');
@@ -9,9 +17,10 @@ function getCookie(key) {
 			if (c.indexOf(name)  == 0) {
 					return c.substring(name.length, c.length);
 			 }
-	};
+	}
 	return "";
 }
+
 
 function checkCookie(host, key)
 {
@@ -35,5 +44,5 @@ function checkCookie(host, key)
     document.getElementById('myaccountbtn-mobile').innerHTML = "<span class='glyphicon glyphicon-user' aria-hidden='true'></span>用户信息";
     document.getElementById('myaccountbtnlogout-mobile').setAttribute("style", "visibility: display;");
     return true;
-  };
+  }
 }

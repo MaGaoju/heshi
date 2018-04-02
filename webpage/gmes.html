@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<title>BEYOU DIAMOND|合适钻石</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+		<meta content="安特卫普钻石,比利时钻石" name="keywords">
+		<meta content="合适钻石立足于比利时安特卫普钻石交易所，以最为实惠的价格和最优质的服务，为您提供最适合您的钻石和首饰。华人购买钻石的理想选择，无与伦比的性价比，值得信赖的品质" name="description">
+		<meta name="keywords"   content="BEYOU DIAMOND,比利时钻石, 安特卫普钻石, 合适钻石" />
+		<meta name="description"    content="BEYOU DIAMOND,比利时钻石, 安特卫普钻石, 合适钻石"/>
+		<meta name="author" content="Maggie Ma @2018">
+		<link rel="icon" href="images/icons/favicon.ico">
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.css">
+		<link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pageshare.css">
+    <link rel="stylesheet" href="css/product.css">
+    <script type="text/javascript" src="./js/common.js"></script>
+    <script async="" src="./js/analytics.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/restrequest.js"></script>
+    <script>
+        $(function(){
+          var includes = $('[data-include]');
+          jQuery.each(includes, function(){
+            var file = $(this).data('include') + '.html';
+            $(this).load(file);
+          });
+        });
+    </script>
+    </head>
+    <body onload="getproductsList('gems')">
+        <div data-include="header"></div>
+            <!-- nav end -->
+            <div class="contentmainwrapper">
+                <h2 class="pagetitle"> 合适彩宝 </h2>
+                <div class="mountingorcompletebox" style="display:none;">
+                <a href="jewelry.html?class=complete" class="jew_class_btn jew_complete crr_class" id="jew-complete-btn">成品首饰</a>
+                <a href="jewelry.html?class=mounting" class="jew_class_btn jew_mounting" id="jew-mounting-btn">空托</a>
+                <a href="jewelry-custom.html" class="jew_class_btn jew_mounting" id="jew-diy-btn">自选定制</a>
+                </div>
+            <div class="category-filterbox filter_complete">
+                <h6 class="titleofjewfilter">
+                彩宝
+                <form id="searchbyrefform" method="get" action="">
+                <input onchange="getproductbyID('gems')" type="text" id="searchref" name="searchref" autocomplete='off' placeholder="彩宝编号"/>
+                </form>
+                </h6>
+                <br class="clear">
+                <ul class="categoryfilter">
+                    <li class="cate">
+                    <button onclick="getproductsbyCategory('gems', 1)" class="changeJewCateBTN">红宝石</button>
+                    </li>
+                    <li class="cate">
+                    <button onclick="getproductsbyCategory('gems', 2)" class="changeJewCateBTN">蓝宝石</button>
+                    </li>
+                    <li class="cate">
+                    <button onclick="getproductsbyCategory('gems', 3)" class="changeJewCateBTN">祖母绿</button>
+                    </li>
+                    <li class="cate">
+                    <button onclick="getproductsbyCategory('gems', 9)" class="changeJewCateBTN">其他</button>
+                    </li>
+                    </li>
+                    </ul>
+                    <br class="clear">
+                    <div class="filter_line_dependent" id="filter_line_weight">
+                    <span class="filter_title">钻重</span>
+                    <div id="slider-range-weight" style="width:288px;"></div>
+                    <input type="number" id="weight_from" value="0.2" step=".1" /> - <input type="number" id="weight_to" value="20" step=".1" /> ct <button type="button" id="btn_weight" onclick="filter_weight()"><span class="glyphicon glyphicon-refresh"></span> 刷新</button>
+                    <span id="tooltip-weight"></span>
+                    </div>
+              </div>
+            <div id="productsList" class="jewelry-container-box">
+            </div> 
+            <br class="clear">         
+          </div>
+              <!-- FOOTER -->
+          <div data-include="footer"></div>
+          <script type="text/javascript" src="./js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

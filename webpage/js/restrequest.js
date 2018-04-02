@@ -1,5 +1,6 @@
  var accessToken = 'Jbm6XfXQj/KqmMTqz6c4GQWl9U6JMLQ/T4LzPWIEi2W2Q23GDkuIfxvbUC/rar8ZJIWWSVo68fZ/hv6n0oAeXaQKEfhKmGUZ8m8JHm5TteBZwqZuqXAbOeowTJVBn8aaUhfSfZbmgNnXwDEnhjZ1DZ8jG2Khy9uzoHu5ogwbVHQ=';
  var baseURI = 'https://localhost:8443/';
+ var imgpath = '_image/';
 
  function userregister()
  {
@@ -112,7 +113,8 @@ function userlogout() {
 		 'success': function (result) {
 			 //Process success actions
 			 sessionStorage.clear();
-			 location.reload(true);
+			 removeCookie();
+			 setTimeout(function(){document.location.href = 'login.html';}, 1000);
 			 return true
 		 },
 		 'error': function (XMLHttpRequest, textStatus, errorThrown) {
@@ -122,6 +124,34 @@ function userlogout() {
 		 }
 	 });
  }
+
+ function removeCookie() {
+		var now = new Date();
+  	var time = now.getTime();
+  	var expireTime = time - 1000*36000;
+  	now.setTime(expireTime);
+		var tempExp = 'Wed, 31 Oct 2012 08:50:17 GMT';
+		var ca = document.cookie.split(';');
+		for(var i = 0; i < ca.length; i++) {
+				var c = ca[i];
+				document.cookie = c + '=ok;expires='+now.toGMTString()+';path=/';
+		}
+		return true;
+}
+//set it expire in 2 hours
+function setCookieExpire(key) {
+	var now = new Date();
+	var time = now.getTime();
+	var expireTime = time + 1000*36000;
+	now.setTime(expireTime);
+	var tempExp = 'Wed, 31 Oct 2012 08:50:17 GMT';
+	var ca = document.cookie.split(';');
+	for(var i = 0; i < ca.length; i++) {
+			var c = ca[i];
+			document.cookie = c + '=ok;expires='+now.toGMTString()+';path=/';
+	}
+	return true;
+}
 
  function getToken() {
 	 var url_base = 
@@ -349,7 +379,7 @@ $.ajax({
 	 for(var i=0;i<result.length;i++)
 	 {
 		 var prosuctDataline = '<div class="jewelrybox complete"><a class="seedetailbtn-big demo-box" href="jewelrydetail.html?id='+ result[i]["id"] + '">' +
-		 '<span class="imageholder" style="background-image:url("/pic/jewelry/thumbs/' + result[i]["images"] + '")"></span>'+ 
+		 '<span class="imageholder" style="background-image:url("' + imgpath + result[i]["images"] + '")"></span>'+ 
 		 '<span class="jewelryname">'+ result[i]["name"]+'</span>'+
 		 '<span class="jewelryprice">'+ result[i]["price"]+ '<span class="glyphicon glyphicon-eur" aria-hidden="true"></span></span>'+ 
 		 '<span class="stocknum">'+ result[i]["stock_quantity"]+'</span>' +

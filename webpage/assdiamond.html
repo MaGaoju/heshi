@@ -13,36 +13,26 @@
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/bootstrap-theme.css">
 		<link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/pageshare.css">
-    <link rel="stylesheet" href="css/product.css">
-    <script async="" src="./js/analytics.js"></script>
-    <script src="js/jquery-1.12.4.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/restrequest.js"></script>
-    <script type="text/javascript" src="./js/common.js"></script>
-    <script>
-        $(function(){
-          var includes = $('[data-include]');
-          jQuery.each(includes, function(){
-            var file = $(this).data('include') + '.html';
-            $(this).load(file);
-          });
-        });
-    </script>
+		<link rel="stylesheet" href="css/pageshare.css">
+		<link rel="stylesheet" href="css/product.css">
+		<script async="" src="./js/analytics.js"></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+		<script src="js/bootstrap.js"></script>
+		<script src="js/restrequest.js"></script>
+		<script type="text/javascript" src="./js/common.js"></script>
     </head>
-    <body onload="getproductsList('jewelrys')">
+    <body>
         <div data-include="header"></div>
             <!-- nav end -->
             <div class="contentmainwrapper">
-                <h2 class="pagetitle">合适首饰</h2>
+                <h2 class="pagetitle">合适定制</h2>
                 
                 <div class="mountingorcompletebox" style="display:none;">
                 <a href="jewelry.html?class=complete" class="jew_class_btn jew_complete crr_class" id="jew-complete-btn">成品首饰</a>
                 <a href="jewelry.html?class=mounting" class="jew_class_btn jew_mounting" id="jew-mounting-btn">空托</a>
                 <a href="jewelry-custom.html" class="jew_class_btn jew_mounting" id="jew-diy-btn">自选定制</a>
                 </div>
-                
-            <div class="category-filterbox filter_complete">
+
                 <h6 class="titleofjewfilter">
                 成品首饰
                 <form id="searchbyrefform" method="get" action="">
@@ -77,24 +67,7 @@
                   <option value="ROSE_GOLD">玫瑰金</option>
                 </select>
                 
-                <select id="priceselection" class="filterselection" name="priceselection">
-                  <option value="">价位:</option>
-                  <option value="300">300欧元以内</option>
-                  <option value="600">300-600欧元</option>
-                  <option value="900">600-900欧元</option>
-                  <option value="1200">900-1200欧元</option>
-                  <option value="1500">1200-1500欧元</option>
-                  <option value="1800">1500欧元以上</option>
-                </select>
-                
-                <select id="mountingtypeselection" class="filterselection" name="mountingtypeselection">
-                  <option value="">镶嵌款式:</option>
-                  <option value="3NODE">三爪</option>
-                  <option value="4NODE">四爪</option>
-                  <option value="6NODE">六爪</option>
-                  <option value="SURROUND">包镶</option>
-                  <option value="SPECIAL">独特</option>
-                </select>
+               
                 
                 
                 <select id="diashapeselection" class="filterselection" name="diashapeselection">
@@ -125,6 +98,8 @@
             </div> 
             <br class="clear">         
           </div>
+          
+ 
               <!-- FOOTER -->
           <div data-include="footer"></div>
           <script type="text/javascript" src="./js/ie10-viewport-bug-workaround.js"></script>
